@@ -10,6 +10,8 @@ if (!isset($_GET['proid']) || $_GET['proid'] == NULL) {
 	echo "<script> window.location = 'index.php' </script>";
 } else {
 	$id = $_GET['proid']; // Get product id
+	$viewProduct = $product ->count_view($id);
+
 }
 
 /**
@@ -25,7 +27,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 } else {
 
 		$insertCart = $ct->add_to_cart($productId, $quantity, $customer_id);
-		echo "<script> window.location = 'details.php?proid=".$productId." </script>";
+		echo "<meta http-equiv='refresh' content='0;URL=details.php?proid=$productId'>";
+	
 	}
 
 

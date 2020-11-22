@@ -310,6 +310,20 @@ class product
 		$result = $this->db->select($query);
 		return $result;
 	}
+	public function count_view($productId)
+	{
+		$query = "SELECT * FROM tbl_product where productId = '$productId' ";
+		$result = $this->db->select($query)->fetch_assoc();
+		$quantity =$result['product_view'];
+		$quantity++;
+		$query_update = "UPDATE tbl_product SET
+
+					product_view = '$quantity'					
+					
+					WHERE productId = '$productId'";
+					$result = $this->db->insert($query_update);
+					return $result;
+	}
 	//Kết thúc Backend
 
 	public function getproduct_featheread()

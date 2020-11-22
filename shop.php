@@ -1,6 +1,50 @@
 <?php
 include 'inc/header.php';
 ?>
+
+<?php 
+/**
+ * add to cart (page index)
+ */
+
+$customer_id = Session::get('customer_id');
+
+if (isset($_GET['proId']) && isset($_GET['quantity'])) {
+
+    // LẤY DỮ LIỆU TỪ PHƯƠNG THỨC get
+    $id = $_GET['proId'];
+
+    $quantity = $_GET['quantity'];
+
+    if ($customer_id === false) {
+        echo "<meta http-equiv='refresh' content='0;URL=login.php'>";
+    } else {
+
+        $insertCart = $ct->add_to_cart($id, $quantity, $customer_id);
+        echo "<meta http-equiv='refresh' content='0;URL=shop.php'>";
+    }
+}
+/**
+ * login to add wishlist
+ */
+if (isset($_GET['proIdWishLish'])) {
+
+	// LẤY DỮ LIỆU TỪ PHƯƠNG THỨC get
+	$productId = $_GET['proIdWishLish'];
+
+	if ($customer_id === false) {
+			echo "<meta http-equiv='refresh' content='0;URL=login.php'>";
+	} else {
+
+			$insertWishlist = $product->insertWishlist($productId, $customer_id);
+			echo "<meta http-equiv='refresh' content='0;URL=shop.php'>";
+	}
+}
+?>
+
+
+
+
 <!-- Header Section End -->
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option">

@@ -428,7 +428,7 @@ $(document).on('click', '#filter_btn', function(){
  var minAmount = minAmount.substring(1);
  var maxAmount = maxAmount.substring(1);
  var brand = $("#brandId").data('brand');
- alert(brand);
+ 
 
  $.ajax({
   url: "ajax_action.php",

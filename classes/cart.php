@@ -64,6 +64,14 @@ class cart
     }
 
     /**
+     * count view
+     */
+    public function count_view($productId)
+    {
+        $productId = mysqli_real_escape_string($this->db->link, $productId);
+        
+    }
+    /**
      * get product_cart
      */
     public function get_product_cart($customer_id)
