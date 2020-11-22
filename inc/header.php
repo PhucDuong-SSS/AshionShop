@@ -126,8 +126,8 @@ session_set_cookie_params(0);
           <nav class="header__menu">
             <ul>
               <li class="active"><a href="./index.php">Home</a></li>
-              <li><a href="#">Women’s</a></li>
-              <li><a href="#">Men’s</a></li>
+              <li><a href="./shop.php">Women’s</a></li>
+              <li><a href="./shop.php">Men’s</a></li>
               <li><a href="./shop.php">Shop</a></li>
               <li><a href="#">Pages</a>
                 <ul class="dropdown">

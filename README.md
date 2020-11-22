@@ -8,6 +8,7 @@ Giao diện wed
 + Đăng nhập người dùng
 + Hiển thị sản phẩm theo category ajax
 +Thêm giỏ hàng, checkout
++ Ajax phan trang
 
 Database
 

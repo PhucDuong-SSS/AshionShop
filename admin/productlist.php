@@ -9,11 +9,11 @@
 	$pd = new product();
 	$fm = new Format();
 	if(!isset($_GET['productid']) || $_GET['productid'] == NULL){
-        // echo "<script> window.location = 'catlist.php' </script>";
+        // echo "<script> window.location = 'productlist.php' </script>";
         
     }else {
-        $id = $_GET['productid']; // Lấy catid trên host
-        $delProduct = $pd -> del_product($id); // hàm check delete Name khi submit lên
+        $id = $_GET['productid']; 
+        $delProduct = $pd -> del_product($id);
     }
  ?>
 <div class="grid_10">

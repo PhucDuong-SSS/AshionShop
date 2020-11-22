@@ -310,6 +310,20 @@ class product
 		$result = $this->db->select($query);
 		return $result;
 	}
+	public function count_view($productId)
+	{
+		$query = "SELECT * FROM tbl_product where productId = '$productId' ";
+		$result = $this->db->select($query)->fetch_assoc();
+		$quantity =$result['product_view'];
+		$quantity++;
+		$query_update = "UPDATE tbl_product SET
+
+					product_view = '$quantity'					
+					
+					WHERE productId = '$productId'";
+					$result = $this->db->insert($query_update);
+					return $result;
+	}
 	//Kết thúc Backend
 
 	public function getproduct_featheread()
@@ -412,11 +426,45 @@ class product
 		return $total_pages;
 	}
 
+// filter product by price
+public function getproduct_by_price($page,$brandId,$minAmount, $maxAmount)
+{
+	$record_per_page = 9;
+
+	
+	$start_from = ($page - 1) * $record_per_page;
+
+
+	$query = "SELECT * FROM tbl_product 
+		WHERE brandId = '$brandId'
+		and price < $maxAmount and price > $minAmount
+		
+		order by productId desc LIMIT $start_from, $record_per_page ";
+	$result = $this->db->select($query);
+	return $result;
+}
+public function getPaginationCategoryFilter($id,$minAmount,$maxAmount)
+{
+	$page_query = "SELECT * FROM tbl_product WHERE brandId = '$id' 
+	and price < $maxAmount and price > $minAmount
+	ORDER BY productId DESC"; 
+	$record_per_page = 9;
+	
+	
+	$result = $this->db->select($page_query);
+	$total_pages=1;
+	if($result){
+		$total_records = mysqli_num_rows($result); 
+	$total_pages = ceil($total_records/$record_per_page);
+	}
+	
+	return $total_pages;
+}
 
 
 
-	////////////////////////////////////
-	/////////////////////////////////////////////////////////
+	
+	//search product
 	public function getproduct_search($page,$search)
 	{
 		$record_per_page = 9;

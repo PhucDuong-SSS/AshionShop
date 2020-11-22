@@ -55,6 +55,7 @@ $(document).ready(function () {
       method: "POST",
       data: { women: category },
       success: function (data) {
+        
         $('#load_data').html(data);
         $('.image-popup').magnificPopup({
           type: 'image'
@@ -152,21 +153,40 @@ $("#cos").on("click", function () {
 /**
  * ajax for show page
  */
-// show wowmnent 
-
-
+// start page shop
+var brandwomen = $("#show_women").data('women');
+var brandmen = $("#show_men").data('men');
+var brandkid = $("#show_kid").data('kid');
+var brandcos = $("#show_cos").data('cos');
+var brandacc = $("#show_acc").data('acc');
+$.ajax({
+  url:"ajax_action.php",
+  method:"POST", 
+  
+  data: { pageshop: "",women_show_all: brandwomen },
+      
+  success: function(data) {
+    console.log(data);
+    $('#pagination_data').html(data);
+    $('.image-popup').magnificPopup({
+      type: 'image'
+  });
+      
+  }
+ });
+// show women
 
 $("#show_women").on("click", function () {
-  var category = $("#show_women").data('women');
-  
-  
+  // var brand = $("#show_women").data('women');
+   
   
   
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { women_show_all: category },
+    data: { women_show_all: brandwomen },
     success: function (data) {
+      console.log(data);
       $('#pagination_data').html(data);
 
       $('.image-popup').magnificPopup({
@@ -179,14 +199,16 @@ $("#show_women").on("click", function () {
 
 });
 
-$(document).on('click', '.pagination_link', function(){  
+$(document).on('click', '.pagination_link13', function(){  
   var page = $(this).attr("id");
   
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { page: page },
+    data: { pagewomen: page, brand13: brandwomen },
     success: function (data) {
+      console.log(data)
+
       $('#pagination_data').html(data);
 
       $('.image-popup').magnificPopup({
@@ -200,7 +222,7 @@ $(document).on('click', '.pagination_link', function(){
 });
 // show men
 $("#show_men").on("click", function () {
-  var category = $("#show_men").data('men');
+  // var category = $("#show_men").data('men');
   
   
   
@@ -209,7 +231,7 @@ $("#show_men").on("click", function () {
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { men_show_all: category },
+    data: { men_show_all: brandmen },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -223,13 +245,13 @@ $("#show_men").on("click", function () {
 
 });
 
-$(document).on('click', '.pagination_link', function(){  
+$(document).on('click', '.pagination_link14', function(){  
   var page = $(this).attr("id");
   
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { page: page },
+    data: { pagemen: page,brand14: brandmen },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -244,12 +266,12 @@ $(document).on('click', '.pagination_link', function(){
 });
 // show kid
 $("#show_kid").on("click", function () {
-  var category = $("#show_kid").data('kid');
+  // var category = $("#show_kid").data('kid');
      
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { kid_show_all: category },
+    data: { kid_show_all: brandkid },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -263,13 +285,13 @@ $("#show_kid").on("click", function () {
 
 });
 
-$(document).on('click', '.pagination_link', function(){  
+$(document).on('click', '.pagination_link15', function(){  
   var page = $(this).attr("id");
   
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { page: page },
+    data: { pagekid: page,brand15: brandkid },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -284,12 +306,12 @@ $(document).on('click', '.pagination_link', function(){
 });
 // show accessories
 $("#show_acc").on("click", function () {
-  var category = $("#show_acc").data('acc');
+  // var category = $("#show_acc").data('acc');
      
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { acc_show_all: category },
+    data: { acc_show_all: brandacc },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -303,13 +325,13 @@ $("#show_acc").on("click", function () {
 
 });
 
-$(document).on('click', '.pagination_link', function(){  
-  var page = $(this).attr("id");
+$(document).on('click', '.pagination_link17', function(){  
+  // var page = $(this).attr("id");
   
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { page: page },
+    data: { pageacc: page, brand17: brandacc },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -324,12 +346,12 @@ $(document).on('click', '.pagination_link', function(){
 });
 // show cosmetic
 $("#show_cos").on("click", function () {
-  var category = $("#show_cos").data('cos');
+  // var category = $("#show_cos").data('cos');
      
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { kid_show_all: category },
+    data: { kid_show_all: brandcos },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -343,13 +365,13 @@ $("#show_cos").on("click", function () {
 
 });
 
-$(document).on('click', '.pagination_link', function(){  
+$(document).on('click', '.pagination_link16', function(){  
   var page = $(this).attr("id");
   
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: { page: page },
+    data: { pagecos: page, brand16: brandcos },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -397,21 +419,24 @@ $(document).on('click', '.pagination_link', function(){
 // });
 
 /**
- * filter
+ * filter women
  */
+
 $(document).on('click', '#filter_btn', function(){  
  var minAmount =  $('#minamount').val();
  var maxAmount = $('#maxamount').val();
  var minAmount = minAmount.substring(1);
  var maxAmount = maxAmount.substring(1);
+ var brand = $("#brandId").data('brand');
+ 
 
  $.ajax({
   url: "ajax_action.php",
   method: "POST",
-  data: { minAmount: minAmount,maxAmount:maxAmount },
+  data: { minAmount: minAmount,maxAmount:maxAmount, brand:brand },
   success: function (data) {
     $('#pagination_data').html(data);
-
+    console.log(data);
     $('.image-popup').magnificPopup({
       type: 'image'
   });
@@ -419,12 +444,42 @@ $(document).on('click', '#filter_btn', function(){
 
 });
 
-  
-  
- 
+
+   
+});
+
+$(document).on('click', '.pagination_link_filter', function(){  
+  var page = $(this).attr("id");
+  var brand = $("#brandId").data('brand');
+  var minAmount =  $('#minamount').val();
+ var maxAmount = $('#maxamount').val();
+ var minAmount = minAmount.substring(1);
+ var maxAmount = maxAmount.substring(1);
+
+  $.ajax({
+    url: "ajax_action.php",
+    method: "POST",
+    data: {minAmount: minAmount,maxAmount:maxAmount, brand:brand, page:page },
+    success: function (data) {
+      $('#pagination_data').html(data);
+
+      $('.image-popup').magnificPopup({
+        type: 'image'
+    });
+    }
+
+  });
   
    
 });
+
+
+
+
+
+
+
+
 
 ///////////////////////
 $('.image-popup').magnificPopup({
