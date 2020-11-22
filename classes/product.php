@@ -671,7 +671,27 @@ public function getPaginationCategoryFilter($id,$minAmount,$maxAmount)
 		}
 		return $quantity;
 	}
+// count product 
+public function countProudct($brandId)
+{
+	$query = "SELECT COUNT(productId) AS quantityProduct FROM tbl_product WHERE brandId = '$brandId'";
+	$result = $this->db->select($query);
+		if ($result) {
+			while ($row = $result->fetch_assoc()) {
+
+				$quantity = $row['quantityProduct'];
+			}
+		}
+		return $quantity;
+
 }
+
+
+
+}
+
+
+
 
 
 ?>
