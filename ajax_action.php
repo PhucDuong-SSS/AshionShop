@@ -383,7 +383,7 @@ if(isset($_POST['women_show_all']) || isset($_POST['pageshop'])){
 	 $brand = $_POST['women_show_all'];
 	 $output ='<div class="row property__gallery">
 			
-			<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+			<span id="brandId" data-brand=\''.$brand.'\'></span>			
 			';
 	$product_new = $product->getproduct_all_pagination($page=1,$brand);
 	if ($product_new) {
@@ -455,7 +455,7 @@ if(isset($_POST['women_show_all']) || isset($_POST['pageshop'])){
 		$brand = $_POST['brand13'];
 		$output ='<div class="row property__gallery">
 			
-		<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+		<span id="brandId" data-brand=\''.$brand.'\'></span>			
 		';
 		$product_new = $product->getproduct_all_pagination($page,$brand);
 		if ($product_new) {
@@ -529,7 +529,7 @@ if(isset($_POST['men_show_all'])){
 
 	$output ='<div class="row property__gallery">
 			
-	<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+	<span id="brandId" data-brand=\''.$brand.'\'></span>			
 	';
 	 
 	$product_new = $product->getproduct_all_pagination($page=1,$brand);
@@ -603,7 +603,7 @@ if(isset($_POST['men_show_all'])){
 		 $brand = $_POST['brand14'];
 		 $output ='<div class="row property__gallery">
 			
-			<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+			<span id="brandId" data-brand=\''.$brand.'\'></span>			
 			';
 		$product_new = $product->getproduct_all_pagination($page,$brand);
 		if ($product_new) {
@@ -676,7 +676,7 @@ if(isset($_POST['kid_show_all'])){
 	$brand = $_POST['kid_show_all'];
 	$output ='<div class="row property__gallery">
 			
-	<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+	<span id="brandId" data-brand=\''.$brand.'\'></span>			
 	';
 	 
 	$product_new = $product->getproduct_all_pagination($page=1,$brand);
@@ -750,7 +750,7 @@ if(isset($_POST['kid_show_all'])){
 		 $brand = $_POST['brand15'];
 		 $output ='<div class="row property__gallery">
 			
-			<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+			<span id="brandId" data-brand=\''.$brand.'\'></span>			
 			';
 		$product_new = $product->getproduct_all_pagination($page,15);
 		if ($product_new) {
@@ -823,7 +823,7 @@ if(isset($_POST['cos_show_all'])){
 	$brand = $_POST['cos_show_all'];
 	$output ='<div class="row property__gallery">
 			
-	<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+	<span id="brandId" data-brand=\''.$brand.'\'></span>			
 	';
 	 
 	$product_new = $product->getproduct_all_pagination($page=1,16);
@@ -897,7 +897,7 @@ if(isset($_POST['cos_show_all'])){
 		$brand = $_POST['brand16'];
 		$output ='<div class="row property__gallery">
 			
-		<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+		<span id="brandId" data-brand=\''.$brand.'\'></span>			
 		';
 		 
 		$product_new = $product->getproduct_all_pagination($page,16);
@@ -972,7 +972,7 @@ if(isset($_POST['acc_show_all'])){
 	 $brand = $_POST['acc_show_all'];
 	 $output ='<div class="row property__gallery">
 			
-			<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+			<span id="brandId" data-brand=\''.$brand.'\'></span>			
 			';
 	$product_new = $product->getproduct_all_pagination($page=1,$brand);
 	if ($product_new) {
@@ -1045,7 +1045,7 @@ if(isset($_POST['acc_show_all'])){
 		$brand = $_POST['brand17'];
 		$output ='<div class="row property__gallery">
 			
-		<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+		<span id="brandId" data-brand=\''.$brand.'\'></span>			
 		';
 		$product_new = $product->getproduct_all_pagination($page,$brand);
 		if ($product_new) {
@@ -1116,14 +1116,14 @@ if(isset($_POST['acc_show_all'])){
 	/**
 	 * filter product by price women
 	 */
-		if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['brand13'])  ){
+		if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['brand'])  ){
 			$minAmount = $_POST['minAmount'];
 			$maxAmount = $_POST['maxAmount'];
-			$brand = $_POST['brand13'];
+			$brand = $_POST['brand'];
 
 			$output ='<div class="row property__gallery">
 			
-			<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+			<span id="brandId" data-brand=\''.$brand.'\'></span>			
 			';
 			
 			$product_new = $product->getproduct_by_price($page=1,$brand,$minAmount,$maxAmount);
@@ -1174,7 +1174,7 @@ if(isset($_POST['acc_show_all'])){
 				$total_pages =$product->getPaginationCategoryFilter($brand,$minAmount,$maxAmount);
 				for($i=1; $i<=$total_pages; $i++)  
 				{  
-						$output .= '<a class="pagination_link_filter'.$brand.'" id="'.$i.'">'.$i.'</a>';  
+						$output .= '<a class="pagination_link_filter" id="'.$i.'">'.$i.'</a>';  
 				} 
 		
 				$output .='	</div>
@@ -1190,15 +1190,15 @@ if(isset($_POST['acc_show_all'])){
 			
 			}	
 			
-			if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['pageFilterWomen'])  ){
+			if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['page'])  ){
 				$minAmount = $_POST['minAmount'];
 				$maxAmount = $_POST['maxAmount'];
-				$brand = $_POST['brand13_pag'];
-				$page = $_POST['pageFilterWomen'];
+				$brand = $_POST['brand'];
+				$page = $_POST['page'];
 	
 				$output ='<div class="row property__gallery">
 				
-				<span id="brandId'.$brand.'" data-brand=\''.$brand.'\'></span>			
+				<span id="brandId" data-brand=\''.$brand.'\'></span>			
 				';
 				
 				$product_new = $product->getproduct_by_price($page,$brand,$minAmount,$maxAmount);
@@ -1249,7 +1249,7 @@ if(isset($_POST['acc_show_all'])){
 					$total_pages =$product->getPaginationCategoryFilter($brand,$minAmount,$maxAmount);
 					for($i=1; $i<=$total_pages; $i++)  
 					{  
-							$output .= '<a class="pagination_link_filter'.$brand.'" id="'.$i.'">'.$i.'</a>';  
+							$output .= '<a class="pagination_link_filter" id="'.$i.'">'.$i.'</a>';  
 					} 
 			
 					$output .='	</div>

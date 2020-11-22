@@ -427,13 +427,13 @@ $(document).on('click', '#filter_btn', function(){
  var maxAmount = $('#maxamount').val();
  var minAmount = minAmount.substring(1);
  var maxAmount = maxAmount.substring(1);
- var brand = $("#brandId13").data('brand');
- 
+ var brand = $("#brandId").data('brand');
+ alert(brand);
 
  $.ajax({
   url: "ajax_action.php",
   method: "POST",
-  data: { minAmount: minAmount,maxAmount:maxAmount, brand13:brand },
+  data: { minAmount: minAmount,maxAmount:maxAmount, brand:brand },
   success: function (data) {
     $('#pagination_data').html(data);
     console.log(data);
@@ -448,9 +448,9 @@ $(document).on('click', '#filter_btn', function(){
    
 });
 
-$(document).on('click', '.pagination_link_filter13', function(){  
+$(document).on('click', '.pagination_link_filter', function(){  
   var page = $(this).attr("id");
-  var brand = $("#brandId13").data('brand');
+  var brand = $("#brandId").data('brand');
   var minAmount =  $('#minamount').val();
  var maxAmount = $('#maxamount').val();
  var minAmount = minAmount.substring(1);
@@ -459,7 +459,7 @@ $(document).on('click', '.pagination_link_filter13', function(){
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: {minAmount: minAmount,maxAmount:maxAmount, brand13_pag:brand, pageFilterWomen:page },
+    data: {minAmount: minAmount,maxAmount:maxAmount, brand:brand, page:page },
     success: function (data) {
       $('#pagination_data').html(data);
 
