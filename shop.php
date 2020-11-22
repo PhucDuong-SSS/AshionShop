@@ -30,7 +30,7 @@ include 'inc/header.php';
 							<div class="accordion" id="accordionExample">
 								<div class="card">
 									<div class="card-heading active">
-										<a id="show_women" data-women="show_women_all" data-toggle="collapse" data-target="#collapseOne">Women</a>
+										<a id="show_women" data-women="13" data-toggle="collapse" data-target="#collapseOne">Women</a>
 									</div>
 									<div id="collapseOne" class="collapse show" data-parent="#accordionExample">
 										<div class="card-body">
@@ -47,7 +47,7 @@ include 'inc/header.php';
 								</div>
 								<div class="card">
 									<div class="card-heading">
-										<a id="show_men" data-men="show_men_all" data-toggle="collapse" data-target="#collapseTwo">Men</a>
+										<a id="show_men" data-men="14" data-toggle="collapse" data-target="#collapseTwo">Men</a>
 									</div>
 									<div id="collapseTwo" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">
@@ -64,7 +64,7 @@ include 'inc/header.php';
 								</div>
 								<div class="card">
 									<div class="card-heading">
-										<a id="show_kid" data-kid="show_kid_all" data-toggle="collapse" data-target="#collapseThree">Kids</a>
+										<a id="show_kid" data-kid="15" data-toggle="collapse" data-target="#collapseThree">Kids</a>
 									</div>
 									<div id="collapseThree" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">
@@ -81,7 +81,7 @@ include 'inc/header.php';
 								</div>
 								<div class="card">
 									<div class="card-heading">
-										<a id="show_acc" data-acc=show_all_acc data-toggle="collapse" data-target="#collapseFour">Accessories</a>
+										<a id="show_acc" data-acc="17" data-toggle="collapse" data-target="#collapseFour">Accessories</a>
 									</div>
 									<div id="collapseFour" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">
@@ -98,7 +98,7 @@ include 'inc/header.php';
 								</div>
 								<div class="card">
 									<div class="card-heading">
-										<a id="show_cos" data-cos="cos_show_all" data-toggle="collapse" data-target="#collapseFive">Cosmetic</a>
+										<a id="show_cos" data-cos="16" data-toggle="collapse" data-target="#collapseFive">Cosmetic</a>
 									</div>
 									<div id="collapseFive" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">

@@ -49,7 +49,7 @@
 							<th>Giá</th>
 							<th>Khách hàng</th>
 							<th>Note</th>
-							<th>Địa chỉ</th>
+							
 							<th>Địa chỉ</th>
 							<th>Xử lý</th>
 						</tr>
