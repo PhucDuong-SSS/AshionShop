@@ -390,33 +390,33 @@ $(document).on('click', '.pagination_link16', function(){
 
 
 
-// $('#search-input').keypress(function(event){
-//   var keycode = (event.keyCode ? event.keyCode : event.which);
-//   if(keycode == '13'){
-//     var searchstring  = $(this).val();
+$('#search-input').keypress(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+    var searchstring  = $(this).val();
 
-//     //  window.location = 'shop.php' ;
-//     // console.log(searchstring);
+     window.location = 'shop.php' ;
+    // console.log(searchstring);
 
-//     $.ajax({
-//       url: "ajax_action.php",
-//       method: "POST",
-//       data: { search: searchstring },
-//       // async: false,
+    $.ajax({
+      url: "ajax_action.php",
+      method: "POST",
+      data: { search: searchstring },
+      // async: false,
             
-//       success: function (data) {
-//         $('#pagination_data').html(data);
-//         alert(data);
+      success: function (data) {
+        $('#pagination_data').html(data);
+        alert(data);
   
-//         $('.image-popup').magnificPopup({
-//           type: 'image'
-//       });
-//       }
+        $('.image-popup').magnificPopup({
+          type: 'image'
+      });
+      }
   
-//     });
+    });
     
-//   }
-// });
+  }
+});
 
 /**
  * filter women
@@ -435,8 +435,7 @@ $(document).on('click', '#filter_btn', function(){
   method: "POST",
   data: { minAmount: minAmount,maxAmount:maxAmount, brand:brand },
   success: function (data) {
-    $('#pagination_data').html(data);
-    console.log(data);
+    $('#pagination_data').html(data);    
     $('.image-popup').magnificPopup({
       type: 'image'
   });
@@ -459,7 +458,7 @@ $(document).on('click', '.pagination_link_filter', function(){
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: {minAmount: minAmount,maxAmount:maxAmount, brand:brand, page:page },
+    data: {minAmountfilter: minAmount,maxAmountfilter:maxAmount, brand:brand, page:page },
     success: function (data) {
       $('#pagination_data').html(data);
 

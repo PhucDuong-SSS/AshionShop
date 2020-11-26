@@ -188,8 +188,9 @@ class cart
                 $customer_id = $customer_id;
                 $query_order = "INSERT INTO tbl_order(productId,productName,quantity,price,image,customer_id,note) VALUES('$productid','$productName','$quantity','$price','$image','$customer_id','$note')";
                 $insert_order = $this->db->insert($query_order);
-                return $insert_order;
+               
             }
+            return $insert_order;
         }
     }
     public function getAmountPrice($customer_id)

@@ -13,7 +13,9 @@
     	$qty = $_GET['qty'];
     	$time = $_GET['time'];
     	$price = $_GET['price'];
-    	$shifted = $ct->shifted($id,$proid,$qty,$time,$price);
+			$shifted = $ct->shifted($id,$proid,$qty,$time,$price);
+			echo "<script> window.location = 'inbox.php' </script>";
+
     }
 
     if(isset($_GET['delid'])){
@@ -70,7 +72,7 @@
 							<td><?= $fm->FormatDate($result['date_order']); ?></td>
 							<td><?= $result['productName'] ?> </td>
 							<td><?= $result['quantity'] ?></td>
-							<td><?= $result['price'].' VNĐ' ?></td>
+							<td><?= $result['price'].' USD' ?></td>
 							<td><?= $result['customer_id'] ?></td>
 							<td><?= $result['note'] ?></td>
 							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">Xem khách hàng</a></td>

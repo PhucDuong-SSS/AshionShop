@@ -380,7 +380,7 @@ if(isset($_POST['kid'])){
 
 if(isset($_POST['women_show_all']) || isset($_POST['pageshop'])){
 	
-	 $brand = $_POST['women_show_all'];
+	 $brand = isset($_POST['women_show_all'])?$_POST['women_show_all']:13 ;
 	 $output ='<div class="row property__gallery">
 			
 			<span id="brandId" data-brand=\''.$brand.'\'></span>			
@@ -1116,7 +1116,7 @@ if(isset($_POST['acc_show_all'])){
 	/**
 	 * filter product by price women
 	 */
-		if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['brand'])  ){
+		if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['brand']) &&!isset($_POST['page'])  ){
 			$minAmount = $_POST['minAmount'];
 			$maxAmount = $_POST['maxAmount'];
 			$brand = $_POST['brand'];
@@ -1190,7 +1190,7 @@ if(isset($_POST['acc_show_all'])){
 			
 			}	
 			
-			if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['page'])  ){
+			if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['page']) &&isset($_POST['brand'])  ){
 				$minAmount = $_POST['minAmount'];
 				$maxAmount = $_POST['maxAmount'];
 				$brand = $_POST['brand'];

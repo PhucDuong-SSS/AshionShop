@@ -1,10 +1,10 @@
 <?php
 include 'inc/header.php';
 $customer_id = Session::get('customer_id');
-$check_product_cart = $ct->get_product_cart($customer_id);
+// $check_product_cart = $ct->get_product_cart($customer_id);
 
 
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $check_product_cart !==false){
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
     
     $note = $_POST['note'];
 
@@ -108,12 +108,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $check_pro
 						<h5>Your order</h5>
 						<div class="checkout__order__product">
 							<ul>
+							<li>
+											<span class="top__text">Product</span>
+											<span class="top__text__right">Total</span>
+										</li>
 								<?php
 								/**
 								 * show cart
 								 */
-
+								
 								$get_product_cart = $ct->get_product_cart($customer_id);
+								$total = 0;
 								$subtotal = 0;
 								if ($get_product_cart) {
 									$total = 0;
@@ -122,38 +127,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $check_pro
 										$i++;
 
 								?>
-										<li>
-											<span class="top__text">Product</span>
-											<span class="top__text__right">Total</span>
-										</li>
-										<li><?= $i ?>. <?= $result['productName'] ?> <span>$ <?= $subtotal = $result['quantity'] * $result['price'] ?></span></li>
+										
+										<li><?= $i ?>. <?= $result['productName'] ?> <span>$ <?= $total = $result['quantity'] * $result['price'] ?></span></li>
 								<?php
 										$subtotal += $total;
 									}
+									
 								}
 								?>
 							</ul>
 						</div>
 						<div class="checkout__order__total">
 							<ul>
-								<li>Subtotal <span>$ <?= $check_product_cart!==false? $subtotal:0?></span></li>
+								<li>Subtotal <span>$ <?= $subtotal??0?></span></li>
 								<!-- <li>Total <span>$ 750.0</span></li> -->
 							</ul>
 						</div>
-						<div class="checkout__order__widget">
-
-							<label for="check-payment">
-								Cheque payment
-								<input type="checkbox" id="check-payment">
-								<span class="checkmark"></span>
-							</label>
-							<label for="paypal">
-								PayPal
-								<input type="checkbox" id="paypal">
-								<span class="checkmark"></span>
-							</label>
-						</div>
-						<input type="submit" name="submit" class="site-btn" value="Place oder"></input>
+					
+						<input type="submit" name="submit" class="site-btn" value="Place order"></input>
 					</div>
 				</div>
 			</div>

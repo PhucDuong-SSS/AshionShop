@@ -12,7 +12,9 @@
      	$id = $_GET['confirmid'];
      	$time = $_GET['time'];
      	$price = $_GET['price'];
-     	$shifted_confirm = $ct->shifted_confirm($id,$time,$price);
+			 $shifted_confirm = $ct->shifted_confirm($id,$time,$price);
+			 echo "<script> window.location = 'ordered.php' </script>";
+
     }
 
 
@@ -67,8 +69,7 @@
 											<td class="cart__product__item">
 												<img width="90" height="90" src="admin/uploads/<?= $result['image'] ?>" alt="" data-pagespeed-url-hash="4207875790" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
 												<div class="cart__product__item__title">
-													<h6><?= $result['productName']; ?></h6>
-												<?php var_dump($result['productId']);?>	
+													<h6><?= $result['productName']; ?></h6>												
 													<div class="rating">
 														<i class="fa fa-star"></i>
 														<i class="fa fa-star"></i>
@@ -99,12 +100,12 @@
 												}
 												?>
 
-                                            </td>  
-                                            <?php 
+                            </td>  
+                          <?php 
 								if ($result['status'] == '0') {
 								 ?>
 
-								<td><?php echo 'N/A'; ?></td>
+								<td><?= 'N/A'; ?></td>
 
 								 <?php 
 								 }elseif($result['status']==1) {

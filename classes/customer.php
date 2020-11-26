@@ -35,7 +35,7 @@
 			
 
 			if($name == "" || $city == "" || $gender == "" || $email == "" || $address == "" || $phone == "" || $password == ""||$re_password == "" ){
-				$alert = "<span class='error'>Fiedls, term must be not empty </span>";
+				$alert = "Fiedls, term must be not empty ";
 				return $alert;
 			}else{
 				$check_email = "SELECT * FROM tbl_customer WHERE email='$email' LIMIT 1";
@@ -55,7 +55,7 @@
 					$result = $this->db->insert($query);
 					if($result)
 					{
-						$alert = "<span >Insert Customer Successfully</span>";
+						$alert = "<span >Register Account Successfully</span>";
 						return $alert;
 					}else 
 					{

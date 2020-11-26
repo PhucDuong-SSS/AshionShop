@@ -52,7 +52,7 @@ if(!isset($_GET['customerId']) || $_GET['customerId'] == NULL){
 								<td><?= $result['name']; ?></td>
 								<td><?= $result['address'] ?> </td>
 								<td><?= $result['city'] ?></td>
-								<td><?= $result['gender'] . ' VNĐ' ?></td>
+								<td><?= $result['gender']==1?'Nam':'Nữ' ?></td>
 								<td><?= $result['email'] ?></td>
 								<td><?= $result['phone'] ?></td>
 								<td><a href="?customerId=<?= $result['id'] ?>">Xóa</a> </a></td>
