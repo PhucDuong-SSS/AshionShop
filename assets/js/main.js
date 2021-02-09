@@ -25,6 +25,13 @@ Created: Colorib
             $('.filter__controls li').removeClass('active');
             $(this).addClass('active');
         });
+
+        // $('.header__menu li').on('click', function () {
+        //     $('.header__menu li').removeClass('active');
+        //     $(this).addClass('active');
+        // });
+
+
         if ($('.property__gallery').length > 0) {
             var containerEl = document.querySelector('.property__gallery');
             var mixer = mixitup(containerEl);
@@ -167,7 +174,11 @@ Created: Colorib
     /* var timerdate = "2020/12/30" */
 
 	$("#countdown-time").countdown(timerdate, function(event) {
-        $(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>" + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>" + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
+        $(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>"
+         + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" 
+         
+         + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>"
+          + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
     });
 
     /*-------------------

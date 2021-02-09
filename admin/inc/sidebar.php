@@ -26,6 +26,13 @@
                      
                     </ul>
                 </li>
+
+                <li><a class="menuitem">Newsletter</a>
+                    <ul class="submenu">
+                        <li><a href="newsletterlist.php">Danh sách </a> </li>
+                     
+                    </ul>
+                </li>
                 
                <li><a class="menuitem">Quản lí Slider</a>
                     <ul class="submenu">

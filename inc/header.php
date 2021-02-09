@@ -125,20 +125,21 @@ session_set_cookie_params(0);
         <div class="col-xl-6 col-lg-7">
           <nav class="header__menu">
             <ul>
-              <li class="active"><a href="./index.php">Home</a></li>
-              <li><a href="./shop.php">Women’s</a></li>
-              <li><a href="./shop.php">Men’s</a></li>
+              <li><a href="./index.php">Trang chủ</a></li>
+              <li><a href="./shop.php">Nữ</a></li>
+              <li><a href="./shop.php">Nam</a></li>
               <li><a href="./shop.php">Shop</a></li>
               <li><a href="#">Pages</a>
                 <ul class="dropdown">
-                  <li><a href="./wishlist.php">Wish List</a></li>
-                  <li><a href="./cart.php">Shop Cart</a></li>
-                  <li><a href="./checkout.php">Checkout</a></li>
-                  <li><a href="./blog-details.php">Blog Details</a></li>
+                  <li><a href="./wishlist.php">Yêu thích</a></li>
+                  <li><a href="./cart.php">Giỏ hàng</a></li>
+                  <li><a href="./checkout.php">Thanh toán</a></li>
+                  <li><a href="./ordered.php">Đơn hàng</a></li>
+                  <li><a href="./blogdetail.php">Blog Details</a></li>
                 </ul>
               </li>
               <li><a href="./blog.php">Blog</a></li>
-              <li><a href="./contact.php">Contact</a></li>
+              <li><a href="./contact.php">Liên hệ</a></li>
             </ul>
           </nav>
         </div>

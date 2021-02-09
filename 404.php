@@ -21,7 +21,7 @@
             <div class="product__item__pic" id="product__item__pic">
                 <div class="home-product-item">
                     <a href="details.php?proid='.$result_new['productId'].'">
-                        <div class="home-product-item__img" style="background-image: url(\'admin/uploads/'.$result_new['image'].'\');">
+                        <!-- <div class="home-product-item__img" style="background-image: url(\'admin/uploads/'.$result_new['image'].'\');"> -->
                         </div>
                     </a>
                     <div class="label new">New</div>

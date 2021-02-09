@@ -166,7 +166,7 @@ $.ajax({
   data: { pageshop: "",women_show_all: brandwomen },
       
   success: function(data) {
-    console.log(data);
+    // console.log(data);
     $('#pagination_data').html(data);
     $('.image-popup').magnificPopup({
       type: 'image'
@@ -186,7 +186,7 @@ $("#show_women").on("click", function () {
     method: "POST",
     data: { women_show_all: brandwomen },
     success: function (data) {
-      console.log(data);
+      // console.log(data);
       $('#pagination_data').html(data);
 
       $('.image-popup').magnificPopup({
@@ -207,7 +207,7 @@ $(document).on('click', '.pagination_link13', function(){
     method: "POST",
     data: { pagewomen: page, brand13: brandwomen },
     success: function (data) {
-      console.log(data)
+      
 
       $('#pagination_data').html(data);
 
@@ -435,6 +435,7 @@ $(document).on('click', '#filter_btn', function(){
   method: "POST",
   data: { minAmount: minAmount,maxAmount:maxAmount, brand:brand },
   success: function (data) {
+    
     $('#pagination_data').html(data);    
     $('.image-popup').magnificPopup({
       type: 'image'
@@ -448,17 +449,19 @@ $(document).on('click', '#filter_btn', function(){
 });
 
 $(document).on('click', '.pagination_link_filter', function(){  
+  
   var page = $(this).attr("id");
   var brand = $("#brandId").data('brand');
   var minAmount =  $('#minamount').val();
  var maxAmount = $('#maxamount').val();
  var minAmount = minAmount.substring(1);
  var maxAmount = maxAmount.substring(1);
+ 
 
   $.ajax({
     url: "ajax_action.php",
     method: "POST",
-    data: {minAmountfilter: minAmount,maxAmountfilter:maxAmount, brand:brand, page:page },
+    data: {minAmount: minAmount,maxAmount:maxAmount, brand:brand, page:page },
     success: function (data) {
       $('#pagination_data').html(data);
 
@@ -477,9 +480,6 @@ $(document).on('click', '.pagination_link_filter', function(){
 
 
 
-
-
-
 ///////////////////////
 $('.image-popup').magnificPopup({
   type: 'image'
@@ -489,3 +489,43 @@ $('.image-popup').magnificPopup({
 
 
 });
+
+// ajax save email for news letters
+$(document).on('click', '#saveNewletter', function(e){
+  e.preventDefault()  
+  const email = $('#email').val();
+ 
+  if(  !validateEmail(email)) 
+  { 
+    $('#result_email').html('Email không hợp lệ');
+  }
+  else
+  {
+    $.ajax({
+      url: "ajax_newsletter.php",
+      method: "POST",
+      data: {email: email},
+      success: function (data) {
+        console.log(data);
+        $('#result_email').html(data);  
+      
+      }
+    
+    });
+    
+  }
+
+  
+  
+ 
+ 
+
+
+  
+   
+});
+
+function validateEmail($email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test( $email );
+}

@@ -46,12 +46,12 @@
 						<table>
 							<thead>
 								<tr>
-									<th>No</th>
-									<th>Product</th>
-									<th>Price</th>
-									<th>Quantity</th>
-									<th>Status</th>
-									<th>Action</th>
+									<th>STT</th>
+									<th>Sản phẩm</th>
+									<th>Giá</th>
+									<th>Số lượng</th>
+									<th>Trạng thái</th>
+									<th>Hành động</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -137,8 +137,6 @@
 								}
 								?>
 
-
-
 							</tbody>
 						</table>
 					</div>
@@ -147,7 +145,7 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="cart__btn">
-						<a href="index.php">Continue Shopping</a>
+						<a href="index.php">Tiếp tục mua hàng</a>
 					</div>
 				</div>
 				

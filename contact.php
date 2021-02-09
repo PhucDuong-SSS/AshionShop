@@ -32,11 +32,11 @@
 </li>
 <li>
 <h6><i class="fa fa-phone"></i> Phone</h6>
-<p><span>054-113-113</span><span>0975398152</span></p>
+<p><span>054-113-113</span><span>0975398142</span></p>
 </li>
 <li>
 <h6><i class="fa fa-headphones"></i> Support</h6>
-<p>phucngocduong@gmail.com</p>
+<p>phucdnDev@gmail.com</p>
 </li>
 </ul>
 </div>

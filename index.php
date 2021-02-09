@@ -54,10 +54,10 @@ if (isset($_GET['proIdWishLish'])) {
             <div class="col-lg-6 p-0">
                 <div class="categories__item categories__large__item set-bg" data-setbg="img/categories/category-1.jpg">
                     <div class="categories__text">
-                        <h1>Women’s fashion</h1>
-                        <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
-                            edolore magna aliquapendisse ultrices gravida.</p>
-                        <a href="shop.php">Shop now</a>
+                        <h1>Thời Trang Nữ</h1>
+                        <p>Sản phẩm nữ thời trang, hàng chất lượng cao đáp ứng nhu cầu về thẩm mỹ và chất lượng
+                            </p>
+                        <a href="shop.php">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -66,34 +66,34 @@ if (isset($_GET['proIdWishLish'])) {
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="img/categories/category-2.jpg">
                             <div class="categories__text">
-                                <h4>Men’s fashion</h4>
+                                <h4>Thời trang Nam</h4>
                                 <p><?= $countMenProduct??0?> items</p>
-                                <a href="shop.php">Shop now</a>
+                                <a href="shop.php">Mua ngay</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="img/categories/category-3.jpg">
                             <div class="categories__text">
-                                <h4>Kid’s fashion</h4>
+                                <h4>Thời trang trẻ em</h4>
                                 <p><?= $countMenKid??0 ?> items</p>
-                                <a href="shop.php">Shop now</a>
+                                <a href="shop.php">Mua ngay</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="img/categories/category-4.jpg">
                             <div class="categories__text">
-                                <h4>Cosmetics</h4>
+                                <h4>Mỹ phẩm</h4>
                                 <p><?= $countMenCos??0?> items</p>
-                                <a href="shop.php">Shop now</a>
+                                <a href="shop.php">Mua ngay</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="img/categories/category-5.jpg">
                             <div class="categories__text">
-                                <h4>Accessories</h4>
+                                <h4>Phụ kiện</h4>
                                 <p><?= $countMenAcc??0 ?> items</p>
                                 <a href="shop.php">Shop now</a>
                             </div>
@@ -111,13 +111,13 @@ if (isset($_GET['proIdWishLish'])) {
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="section-title">
-                    <h4>New product</h4>
+                    <h4>Sản phẩm mới</h4>
                 </div>
             </div>
             <div class="col-lg-8 col-md-8">
                 <ul class="filter__controls">
                     <li id="all" data-all="all" class="active" data-filter="*">All</li>
-                    <li id="women" data-women="women" iddata-filter=".women">Women’s</li>
+                    <li id="women" data-women="women" data-filter=".women">Women’s</li>
                     <li id="men" data-men="men" data-filter=".men">Men’s</li>
                     <li id="kid" data-kid="kid" data-filter=".kid">Kid’s</li>
                     <li id="acc" data-acc="acc" data-filter=".accessories">Accessories</li>
@@ -208,7 +208,7 @@ if (isset($_GET['proIdWishLish'])) {
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="trend__content">
                     <div class="section-title">
-                        <h4>Best seller</h4>
+                        <h4>Bán chạy</h4>
                     </div>
                     <?php
                     $product_best_sell = $product->getproduct_bestsell();
@@ -243,7 +243,7 @@ if (isset($_GET['proIdWishLish'])) {
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="trend__content">
                     <div class="section-title">
-                        <h4>Feature</h4>
+                        <h4>Nổi bật</h4>
                     </div>
                     <?php
                     $product_feature = $product->getproduct_feature();
@@ -290,8 +290,8 @@ if (isset($_GET['proIdWishLish'])) {
             <div class="col-lg-6 p-0">
                 <div class="discount__text">
                     <div class="discount__text__title">
-                        <span>Discount</span>
-                        <h2>Summer 2019</h2>
+                        <span>Giảm giá</span>
+                        <h2>Mùa xuân 2020</h2>
                         <h5><span>Sale</span> 50%</h5>
                     </div>
                     <div class="discount__countdown" id="countdown-time">
@@ -326,29 +326,29 @@ if (isset($_GET['proIdWishLish'])) {
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-car"></i>
-                    <h6>Free Shipping</h6>
-                    <p>For all oder over $99</p>
+                    <h6>Free shipping</h6>
+                    <p>Cho tất cả đơn hàng trên 1 triệu</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-money"></i>
-                    <h6>Money Back Guarantee</h6>
-                    <p>If good have Problems</p>
+                    <h6>Đổi trả</h6>
+                    <p>Nếu sản phẩm có vấn đề</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-support"></i>
-                    <h6>Online Support 24/7</h6>
-                    <p>Dedicated support</p>
+                    <h6>Hỗ trợ online 24/7</h6>
+                    <p>Hỗ trợ tận tâm</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="services__item">
                     <i class="fa fa-headphones"></i>
-                    <h6>Payment Secure</h6>
-                    <p>100% secure payment</p>
+                    <h6>Bảo mật thanh toán</h6>
+                    <p>100% bảo mật</p>
                 </div>
             </div>
         </div>

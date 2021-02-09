@@ -1190,7 +1190,7 @@ if(isset($_POST['acc_show_all'])){
 			
 			}	
 			
-			if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['page']) &&isset($_POST['brand'])  ){
+			if(isset($_POST['minAmount']) &&isset($_POST['maxAmount']) && isset($_POST['page']) &&isset($_POST['brand']) ){
 				$minAmount = $_POST['minAmount'];
 				$maxAmount = $_POST['maxAmount'];
 				$brand = $_POST['brand'];
