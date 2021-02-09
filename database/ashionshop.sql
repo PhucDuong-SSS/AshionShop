@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 27, 2020 lúc 03:07 AM
+-- Thời gian đã tạo: Th2 09, 2021 lúc 01:59 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -159,6 +159,18 @@ INSERT INTO `tbl_customer` (`id`, `name`, `address`, `city`, `gender`, `phone`, 
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tbl_newsletter`
+--
+
+CREATE TABLE `tbl_newsletter` (
+  `id` int(11) NOT NULL,
+  `newsletter_email` varchar(255) NOT NULL,
+  `newsletter_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_order`
 --
 
@@ -174,6 +186,13 @@ CREATE TABLE `tbl_order` (
   `date_order` datetime NOT NULL DEFAULT current_timestamp(),
   `note` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quantity`, `price`, `image`, `status`, `date_order`, `note`) VALUES
+(102, 54, 'Sơ mi nữ tay dài (SMN-V416)', 11, 1, '16', '8aac7ffc8a.jpg', 0, '2020-11-29 02:36:39', '');
 
 -- --------------------------------------------------------
 
@@ -209,7 +228,7 @@ CREATE TABLE `tbl_product` (
 INSERT INTO `tbl_product` (`productId`, `productName`, `product_code`, `productQuantity`, `product_soldout`, `product_remain`, `product_view`, `product_gender`, `product_show`, `catId`, `brandId`, `product_desc`, `type`, `price`, `image`, `istrend`, `created_ad`, `updated_ad`) VALUES
 (26, 'Áo thun vàng', 'AT01', '50', '0', '50', 0, 0, 1, 4, 13, '<p>H&agrave;ng xuất khẩu sang Ch&acirc;u</p>', 1, '15', '4db47c041b.jpg', 1, '2020-11-16 10:44:03', '2020-11-16 10:44:03'),
 (27, 'Sơ mi hồng nhạt', 'SM01', '15', '0', '15', 0, 1, 1, 5, 14, '<p>H&agrave;ng xuất khẩu, kiểu d&aacute;ng hợp thời trang</p>', 1, '20', '7244c95ebb.jpg', 1, '2020-11-16 10:47:29', '2020-11-16 10:47:29'),
-(28, 'Áo đầm vàng cotton', 'D01', '15', '0', '15', 0, 0, 1, 6, 13, '<p>H&agrave;ng chất lượng cao</p>', 1, '255', '752d7162cb.jpg', 1, '2020-11-16 10:49:46', '2020-11-16 10:49:46'),
+(28, 'Áo đầm vàng cotton', 'D01', '15', '0', '15', 1, 0, 1, 6, 13, '<p>H&agrave;ng chất lượng cao</p>', 1, '255', '752d7162cb.jpg', 1, '2020-11-16 10:49:46', '2020-11-16 10:49:46'),
 (29, 'Sơ mi kẻ dọc trơn', 'SM02', '100', '2', '98', 4, 1, 1, 5, 14, '<p>Kiểu d&aacute;ng thời trang</p>', 1, '26', 'b5834c3dd7.jpg', 1, '2020-11-16 10:51:35', '2020-11-16 10:51:35'),
 (30, 'Fit micro', 'SM03', '26', '7', '19', 0, 1, 1, 5, 14, '<p>H&agrave;ng chất lượng cao</p>', 1, '40', '4b7cd6c33d.jpg', 1, '2020-11-16 10:53:00', '2020-11-16 10:53:00'),
 (31, 'Áo sơ mi nam tay ngắn (SMM-N641)', 'SM04', '50', '2', '48', 0, 1, 1, 5, 14, '<p>Chất lượng cao</p>', 1, '10', '5cca2799c6.jpg', 1, '2020-11-16 10:56:03', '2020-11-16 10:56:03'),
@@ -234,8 +253,9 @@ INSERT INTO `tbl_product` (`productId`, `productName`, `product_code`, `productQ
 (51, 'Sơ mi nữ tay dài (SMN-V413)', 'SM02', '150', '0', '150', 11, 0, 1, 5, 13, '<p>Color:&nbsp;<span>Đỏ tươi, Hồng, Trắng, V&agrave;ng</span></p>', 1, '26', '2a80701533.jpg', 0, '2020-11-21 13:33:02', '2020-11-21 13:33:02'),
 (52, 'Sơ mi nữ tay dài (SMN-V409)', 'SM07', '150', '1', '149', 1, 0, 1, 5, 13, '<p>Color: đỏ, trắng</p>', 0, '26', 'c7af3b51fd.jpg', 0, '2020-11-21 13:34:00', '2020-11-21 13:34:00'),
 (53, 'Sơ mi nữ tay dài (SMN-V408)', 'SM10', '150', '13', '137', 0, 0, 1, 5, 13, '<p>Color: xanh biển</p>', 0, '38', '48f9566fb2.jpg', 1, '2020-11-21 13:34:59', '2020-11-21 13:34:59'),
-(54, 'Sơ mi nữ tay dài (SMN-V416)', 'SM012', '150', '23', '127', 0, 0, 1, 5, 13, '<p>Color: hồng</p>', 1, '16', '8aac7ffc8a.jpg', 1, '2020-11-21 13:35:54', '2020-11-21 13:35:54'),
-(55, 'Sơ mi nữ tay dài (SMN-V411)', 'SM014', '150', '21', '129', 4, 0, 1, 5, 13, '<p>Color: xanh</p>', 1, '59', 'e5e6642847.jpg', 1, '2020-11-21 13:36:43', '2020-11-21 13:36:43');
+(54, 'Sơ mi nữ tay dài (SMN-V416)', 'SM012', '150', '23', '127', 3, 0, 1, 5, 13, '<p>Color: hồng</p>', 1, '16', '8aac7ffc8a.jpg', 1, '2020-11-21 13:35:54', '2020-11-21 13:35:54'),
+(55, 'Sơ mi nữ tay dài (SMN-V411)', 'SM014', '150', '21', '129', 4, 0, 1, 5, 13, '<p>Color: xanh</p>', 1, '59', 'e5e6642847.jpg', 1, '2020-11-21 13:36:43', '2020-11-21 13:36:43'),
+(56, 'Buttons tweed blazer', 'TS01', '50', '0', '50', 0, 1, 1, 15, 17, '<p>fdfd</p>', 1, '10000', '7f2ed25ef5.png', 1, '2020-11-28 19:34:43', '2020-11-28 19:34:43');
 
 -- --------------------------------------------------------
 
@@ -320,6 +340,13 @@ ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_newsletter`
+--
+ALTER TABLE `tbl_newsletter`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `newsletter_email` (`newsletter_email`);
+
+--
 -- Chỉ mục cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
@@ -369,7 +396,7 @@ ALTER TABLE `tbl_brand`
 -- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_category`
@@ -390,16 +417,22 @@ ALTER TABLE `tbl_customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_newsletter`
+--
+ALTER TABLE `tbl_newsletter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_slider`
