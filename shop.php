@@ -79,12 +79,12 @@ if (isset($_GET['proIdWishLish'])) {
 									<div id="collapseOne" class="collapse show" data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="#">Coats</a></li>
+												<!-- <li><a href="#">Coats</a></li>
 												<li><a href="#">Jackets</a></li>
-												<li><a href="#">Dresses</a></li>
+												
 												<li><a href="#">Shirts</a></li>
 												<li><a href="#">T-shirts</a></li>
-												<li><a href="#">Jeans</a></li>
+												<li><a href="#">Jeans</a></li> -->
 											</ul>
 										</div>
 									</div>
@@ -96,12 +96,12 @@ if (isset($_GET['proIdWishLish'])) {
 									<div id="collapseTwo" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="#">Coats</a></li>
+												<!-- <li><a href="#">Coats</a></li>
 												<li><a href="#">Jackets</a></li>
 												<li><a href="#">Dresses</a></li>
 												<li><a href="#">Shirts</a></li>
 												<li><a href="#">T-shirts</a></li>
-												<li><a href="#">Jeans</a></li>
+												<li><a href="#">Jeans</a></li> -->
 											</ul>
 										</div>
 									</div>
@@ -130,12 +130,7 @@ if (isset($_GET['proIdWishLish'])) {
 									<div id="collapseFour" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="#">Coats</a></li>
-												<li><a href="#">Jackets</a></li>
-												<li><a href="#">Dresses</a></li>
-												<li><a href="#">Shirts</a></li>
-												<li><a href="#">T-shirts</a></li>
-												<li><a href="#">Jeans</a></li>
+												
 											</ul>
 										</div>
 									</div>
@@ -147,12 +142,7 @@ if (isset($_GET['proIdWishLish'])) {
 									<div id="collapseFive" class="collapse" data-parent="#accordionExample">
 										<div class="card-body">
 											<ul>
-												<li><a href="#">Coats</a></li>
-												<li><a href="#">Jackets</a></li>
-												<li><a href="#">Dresses</a></li>
-												<li><a href="#">Shirts</a></li>
-												<li><a href="#">T-shirts</a></li>
-												<li><a href="#">Jeans</a></li>
+											
 											</ul>
 										</div>
 									</div>
@@ -162,7 +152,7 @@ if (isset($_GET['proIdWishLish'])) {
 					</div>
 					<div class="sidebar__filter">
 						<div class="section-title">
-							<h4>Shop by price</h4>
+							<h4>Lọc theo giá</h4>
 						</div>
 						<div class="filter-range-wrap">
 							<div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="5" data-max="300"></div>
@@ -174,11 +164,11 @@ if (isset($_GET['proIdWishLish'])) {
 								</div>
 							</div>
 						</div>
-						<a id="filter_btn" >Filter</a>
+						<a id="filter_btn" >Lọc</a>
 					</div>
 					<div class="sidebar__sizes">
 						<div class="section-title">
-							<h4>Shop by size</h4>
+							<h4>Lọc theo size</h4>
 						</div>
 						<div class="size__list">
 							<label for="xxs">
@@ -225,7 +215,7 @@ if (isset($_GET['proIdWishLish'])) {
 					</div>
 					<div class="sidebar__color">
 						<div class="section-title">
-							<h4>Shop by size</h4>
+							<h4>Lọc theo màu sắc</h4>
 						</div>
 						<div class="size__list color__list">
 							<label for="black">
@@ -275,11 +265,6 @@ if (isset($_GET['proIdWishLish'])) {
 			<div class="col-lg-9 col-md-9">
 				<span id="pagination_data"></span>
 
-				
-
-
-
-				
 			</div>
 		</div>
 	</div>

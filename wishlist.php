@@ -65,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 						<table>
 							<thead>
 								<tr>
-									<th>Product</th>
-									<th>Price</th>
-									<th>Quantity</th>									
+									<th>Sản phẩm</th>
+									<th>Giá</th>
+									<th>Số lượng</th>									
 									<th></th>
 								</tr>
 							</thead>
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 												</div>
 											</td>
 											<td class="cart__close" style="text-align: center;">
-												<a style="color:#444444; padding:7px" href="?wishlistId=<?= $result['id'] ?>">Xoa</a>
+												<a style="color:#444444; padding:7px" href="?wishlistId=<?= $result['id'] ?>">Xóa</a>
 												
 											</td>
 										</tr>
@@ -127,12 +127,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="cart__btn">
-						<a href="index.php">Continue Shopping</a>
+						<a href="index.php">Tiếp tục mua hàng</a>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="cart__btn update__btn">
-						<span class="icon_loading"></span> <input name="submit" style=" border: transparent; background-color:#F5F5F5;color:#111111;font-weight:600; height:45px" type="submit" value="Add cart">
+						<span class="icon_loading"></span> <input name="submit" style=" border: transparent; background-color:#F5F5F5;color:#111111;font-weight:600; height:45px" type="submit" value="Thêm giỏ hàng">
 					</div>
 				</div>
 			</div>

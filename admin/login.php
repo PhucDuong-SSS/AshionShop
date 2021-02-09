@@ -3,8 +3,9 @@
 	$file_path =  realpath(dirname(__FILE__));
 	include ($file_path.'/../lib/session.php');
 
-	include ($file_path.'/../classes/adminLogin.php');
+	include_once ('../classes/adminlogin.php');
 	Session::checkLogin();
+	
 
  ?>
  <?php

@@ -40,15 +40,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 			<div class="col-lg-12">
 				<span ></span>
 			</div>
-			<div class="col-lg-12">
+			<!-- <div class="col-lg-12">
 				<h6 class="coupon__link"><span class="icon_tag_alt"></span> <a href="#">Have a coupon?</a> Click
 					here to enter your code.</h6>
-			</div>
+			</div> -->
 		</div>
 		<form action="" method="POST" class="checkout__form">
 			<div class="row">
 				<div class="col-lg-6">
-					<h5>Billing detail</h5>
+					<h5>Thông tin khách hàng</h5>
 					<div class="row">
 						<?php
 						$customer_id = Session::get('customer_id');
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 						?>
 								<div class="col-lg-12 col-md-12 col-sm-12">
 									<div class="checkout__form__input">
-										<p>Name <span>*</span></p>
+										<p>Tên <span>*</span></p>
 										<input name="name" type="text" value="<?= $result['name'] ?>">
 									</div>
 								</div>
@@ -67,12 +67,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 								<div class="col-lg-12">
 
 									<div class="checkout__form__input">
-										<p>Address <span>*</span></p>
+										<p>Địa chỉ <span>*</span></p>
 										<input name="address" type="text" value="<?= $result['address'] ?>">
 
 									</div>
 									<div class="checkout__form__input">
-										<p>Town/City <span>*</span></p>
+										<p>Thành phố <span>*</span></p>
 										<input name="city" type="text" value="<?= $result['city'] ?>">
 									</div>
 
@@ -80,7 +80,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6">
 									<div class="checkout__form__input">
-										<p>Phone <span>*</span></p>
+										<p>Điện thoại <span>*</span></p>
 										<input name="phone" type="text" value="<?= $result['phone'] ?>">
 									</div>
 								</div>
@@ -93,7 +93,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 								<div class="col-lg-12">
 
 									<div class="checkout__form__input">
-										<p>Oder notes <span>*</span></p>
+										<p>Ghi chú <span>*</span></p>
 										<input name="note" type="text" placeholder="Note about your order, e.g, special noe for delivery">
 									</div>
 								</div>
@@ -105,12 +105,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 				</div>
 				<div class="col-lg-6">
 					<div class="checkout__order">
-						<h5>Your order</h5>
+						<h5>Đặt hàng của bạn</h5>
 						<div class="checkout__order__product">
 							<ul>
 							<li>
-											<span class="top__text">Product</span>
-											<span class="top__text__right">Total</span>
+											<span class="top__text">Sản phẩm</span>
+											<span class="top__text__right">Tổng cộng</span>
 										</li>
 								<?php
 								/**
@@ -139,12 +139,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 						</div>
 						<div class="checkout__order__total">
 							<ul>
-								<li>Subtotal <span>$ <?= $subtotal??0?></span></li>
+								<li>Tổng tiền <span>$ <?= $subtotal??0?></span></li>
 								<!-- <li>Total <span>$ 750.0</span></li> -->
 							</ul>
 						</div>
 					
-						<input type="submit" name="submit" class="site-btn" value="Place order"></input>
+						<input type="submit" name="submit" class="site-btn" value="Đặt hàng"></input>
 					</div>
 				</div>
 			</div>

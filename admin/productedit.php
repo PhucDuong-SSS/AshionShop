@@ -9,6 +9,7 @@
     $pd = new product();
     if(!isset($_GET['productid']) || $_GET['productid'] == NULL){
         echo "<script> window.location = 'productlist.php' </script>";
+        die();
         
     }else {
         $id = $_GET['productid']; // Lấy productid trên host
@@ -43,7 +44,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input name="productName" value="<?php echo $result_product['productName'] ?>" type="text" class="medium" />
+                        <input name="productName" id="productName" value="<?php echo $result_product['productName'] ?>" type="text" class="medium" />
                     </td>
                 </tr>
                   <tr>
