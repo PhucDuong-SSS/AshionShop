@@ -44,7 +44,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input name="productName" value="<?php echo $result_product['productName'] ?>" type="text" class="medium" />
+                        <input name="productName" id="productName" value="<?php echo $result_product['productName'] ?>" type="text" class="medium" />
                     </td>
                 </tr>
                   <tr>
